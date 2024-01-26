@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={twMerge(inter.className)}>
+            <body className={twMerge(inter.className, "bg-[#FAFAFA]")}>
                 <UIProvider>
                     <section className="bg-white h-screen md:flex md:overflow-hidden">
                         {/* SIDE BAR - GENERAL LAYOUT */}
