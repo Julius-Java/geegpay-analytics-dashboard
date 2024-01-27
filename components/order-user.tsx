@@ -15,7 +15,7 @@ export default function OrderUser({ name }: { name: string }) {
         <User
             name={name}
             avatarProps={{
-                src: "https://i.imgur.com/O9MSaa5.png",
+                src: "https://i.pravatar.cc/",
                 size: "sm",
             }}
         />

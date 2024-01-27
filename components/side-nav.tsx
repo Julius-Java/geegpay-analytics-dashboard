@@ -7,7 +7,6 @@ import moonVector from "@/public/assets/layout/night-mode-vector.png";
 import arrowVector from "@/public/assets/layout/arrow-right-vector.png";
 import gearVector from "@/public/assets/layout/setting-vector.png";
 import logoutVector from "@/public/assets/layout/logout-vector.png";
-import SideDrawer from "./side-drawer";
 import SelectNav from "./select-nav";
 
 export default function SideNav() {

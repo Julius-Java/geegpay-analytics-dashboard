@@ -35,7 +35,7 @@ export default function UptrendLineChart() {
                 borderWidth: 1,
                 borderColor: "#34CAA5",
                 pointerBorderColor: "#34CAA5",
-                tension: 0.2,
+                tension: 0.5,
                 fill: true,
             },
         ],
@@ -79,7 +79,7 @@ export default function UptrendLineChart() {
         },
         elements: {
             point: {
-                radius: 2,
+                radius: 1,
             },
         },
         responsive: true,

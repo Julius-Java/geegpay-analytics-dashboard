@@ -6,6 +6,7 @@ import downloadVector from "@/public/assets/layout/invoice-vector.png";
 import Image from "next/image";
 import { currencyFormatter } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
+import CellDate from "./cell-date";
 
 export const columns: ColumnDef<Order, unknown>[] = [
     {
@@ -19,6 +20,12 @@ export const columns: ColumnDef<Order, unknown>[] = [
     {
         accessorKey: "date",
         header: "Date",
+        cell: ({ row }) => {
+            const { date } = row.original;
+            // if date is longer than 5 characters, return the first 5 characters
+
+            return <CellDate date={date} />;
+        },
     },
     {
         accessorKey: "status",
@@ -36,10 +43,6 @@ export const columns: ColumnDef<Order, unknown>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("amount"));
             const formatted = currencyFormatter(amount);
-            // const formatted = new Intl.NumberFormat("en-US", {
-            //     style: "currency",
-            //     currency: "USD",
-            // }).format(amount);
 
             return <div className="text-right font-medium">{formatted}</div>;
         },

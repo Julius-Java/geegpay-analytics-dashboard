@@ -35,7 +35,7 @@ export default function DownTrendLineChart() {
                 borderWidth: 1,
                 borderColor: "#ED544E",
                 pointerBorderColor: "#ED544E",
-                tension: 0.2,
+                tension: 0.4,
                 fill: true,
             },
         ],
@@ -79,7 +79,7 @@ export default function DownTrendLineChart() {
         },
         elements: {
             point: {
-                radius: 2,
+                radius: 1,
             },
         },
         responsive: true,

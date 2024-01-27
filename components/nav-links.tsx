@@ -1,4 +1,4 @@
-import overviewVector from "@/public/assets/layout/overview-vector.png";
+import overviewVector from "@/public/svg/overview.svg";
 import trendVector from "@/public/assets/layout/trend-vector.png";
 import profileVector from "@/public/assets/layout/profile-vector.png";
 import boxVector from "@/public/assets/layout/box-vector.png";

@@ -4,6 +4,7 @@ import calendarVector from "@/public/assets/layout/calender-vector.png";
 import bellVector from "@/public/assets/layout/bell-vector.png";
 import AccountDropdown from "@/components/account-dropdown";
 import { Input } from "@nextui-org/react";
+import { Badge } from "@nextui-org/react";
 
 const currentDate = new Date(); // Current date and time
 
@@ -95,12 +96,14 @@ export default function OverviewHeader() {
                             </p>
                         </div>
                         <div className="w-[40px] h-[40px] p-[11px] flex items-center justify-center rounded-full border border-[#DADDDD]">
-                            <Image
-                                src={bellVector}
-                                alt="Notifications"
-                                width={20}
-                                height={20}
-                            />
+                            <Badge content="10" color="warning" size="sm">
+                                <Image
+                                    src={bellVector}
+                                    alt="Notifications"
+                                    width={20}
+                                    height={20}
+                                />
+                            </Badge>
                         </div>
                         <div>
                             <AccountDropdown />
