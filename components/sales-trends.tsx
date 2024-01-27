@@ -1,12 +1,12 @@
 import OverviewChart from "./overview-chart";
 import SelectChartSort from "./select-chart-sort";
 
-export default function SalesTrendsChart() {
+export default function SalesTrends() {
     return (
-        <div className="rounded-lg lg:h-[70vh] p-4 h-[50vh] w-full">
-            <div className="mb-5">
-                <h2 className="font-semibold text-sm">Sales Trend</h2>
-                <div className="flex items-center justify-between gap-x-3 mt-4 md:m-0">
+        <div className="border rounded-lg lg:h-[70vh] p-4 h-[50vh] w-full">
+            <div className="mb-5 sm:flex sm:items-center sm:justify-between">
+                <h2 className="font-bold">Sales Trend</h2>
+                <div className="flex items-center justify-end gap-x-3 mt-4 sm:m-0">
                     <span className="block font-medium text-xs">Sort by:</span>
                     <div className="w-[110px]">
                         <SelectChartSort />

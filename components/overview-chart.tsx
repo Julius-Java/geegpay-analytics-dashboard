@@ -1,5 +1,6 @@
 "use client";
 import { Bar } from "react-chartjs-2";
+import { monthlyData, weeklyData } from "@/lib/chart-mock-data";
 import { useState, useEffect } from "react";
 import {
     Chart as Chartjs,
@@ -12,6 +13,7 @@ import {
     layouts,
     plugins,
 } from "chart.js";
+import { useChartStore } from "@/app/store";
 
 Chartjs.register(
     CategoryScale,
@@ -23,56 +25,12 @@ Chartjs.register(
 );
 
 export default function OverviewChart() {
-    const [data, setData] = useState({
-        labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "Novemeber",
-            "December",
-        ],
-        datasets: [
-            {
-                label: "Sales",
-                data: [
-                    6000, 19000, 3000, 27000, 9000, 45000, 9000, 20000, 3000,
-                    27000, 9000, 4000,
-                ],
-                backgroundColor: [
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.50)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                    "rgba(52, 202, 165, 0.10)",
-                ],
-                borderColor: "rgba(255, 99, 132, 0.2)",
-                borderRadius: 100,
-            },
-        ],
-    });
+    const { chartData } = useChartStore();
 
     const options = {
         plugins: {
             legend: {
                 display: false,
-            },
-            title: {
-                display: true,
-                text: "Chart.js Bar Chart",
             },
         },
         layout: {
@@ -81,9 +39,22 @@ export default function OverviewChart() {
                 bottom: 100,
             },
         },
+        scales: {
+            y: {
+                grid: {
+                    display: true,
+                },
+            },
+
+            x: {
+                grid: {
+                    display: false,
+                },
+            },
+        },
         maintainAspectRatio: false,
         responsive: true,
     };
 
-    return <Bar data={data} options={options} />;
+    return <Bar data={chartData} options={options} />;
 }

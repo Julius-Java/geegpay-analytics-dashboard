@@ -1,14 +1,19 @@
 "use client";
 
 import { Select, SelectItem } from "@nextui-org/react";
+import { useChartStore } from "@/app/store";
 
 export default function SelectChartSort() {
+    const { setPeriod } = useChartStore();
+
     return (
         <Select
+            aria-label="Select Chart Sort"
+            onChange={(e) => setPeriod(e.target.value)}
             radius="full"
             size="sm"
             variant="bordered"
-            defaultSelectedKeys={["Weekly"]}
+            defaultSelectedKeys={["Monthly"]}
             // className="rounded-full bg-green-500"
             classNames={{
                 trigger: "h-10 min-h-unit-10",

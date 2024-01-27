@@ -52,7 +52,7 @@ export default function OverviewHeader() {
             </section>
 
             {/* Desktop Display */}
-            <section className="hidden md:block">
+            <section className="hidden md:block ">
                 <h1 className="font-bold mb-3  lg:hidden text-lg">Dashboard</h1>
                 <div className="md:flex justify-between items-center gap-x-4">
                     <div className="flex items-center justify-between grow">
